@@ -1,0 +1,1148 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Burhanuddin Amravatiwala — MATLAB & Simulink Consultant</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+/* ─── TOKEN SYSTEM ─────────────────────────────────────────────────────────── */
+/* Layout: single-column hero → two-column skills grid → project accordion */
+:root {
+  /* Palette — deep navy engineering aesthetic with amber signal accent */
+  --bg:        #0D1117;
+  --bg-2:      #161C24;
+  --bg-3:      #1E2732;
+  --border:    #2A3441;
+  --fg:        #E6EDF3;
+  --fg-2:      #8B949E;
+  --fg-3:      #6E7681;
+  --accent:    #F0A500;
+  --accent-2:  #D4891C;
+  --accent-dim:#F0A50020;
+  --green:     #3FB950;
+  --blue:      #58A6FF;
+
+  /* Type tokens */
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'Space Grotesk', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:        #F8F9FA;
+    --bg-2:      #FFFFFF;
+    --bg-3:      #EEF1F5;
+    --border:    #D0D7DE;
+    --fg:        #1A1F2E;
+    --fg-2:      #4B5563;
+    --fg-3:      #9CA3AF;
+    --accent:    #C07F00;
+    --accent-2:  #A06900;
+    --accent-dim:#C07F0015;
+    --green:     #1A7F37;
+    --blue:      #0969DA;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg:        #F8F9FA;
+  --bg-2:      #FFFFFF;
+  --bg-3:      #EEF1F5;
+  --border:    #D0D7DE;
+  --fg:        #1A1F2E;
+  --fg-2:      #4B5563;
+  --fg-3:      #9CA3AF;
+  --accent:    #C07F00;
+  --accent-2:  #A06900;
+  --accent-dim:#C07F0015;
+  --green:     #1A7F37;
+  --blue:      #0969DA;
+  color-scheme: light;
+}
+
+/* ─── RESET & BASE ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+
+/* ─── LAYOUT WRAPPER ───────────────────────────────────────────────────────── */
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── NAV ──────────────────────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding-block: 14px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  z-index: 101;
+}
+.nav-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--fg);
+}
+.nav-logo svg { flex-shrink: 0; }
+.nav-logo-text {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--fg);
+  line-height: 1;
+}
+.nav-logo-sub {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 3px;
+  opacity: 0.85;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-2);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--fg); }
+.nav-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.15s !important;
+}
+.nav-cta:hover { background: var(--accent-dim) !important; }
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fg);
+  padding: 4px;
+}
+
+/* ─── HERO ─────────────────────────────────────────────────────────────────── */
+.hero {
+  padding-block: 80px 72px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-desc {
+  font-size: 16px;
+  color: var(--fg-2);
+  max-width: 580px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--fg-2);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.tag.highlight {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-secondary:hover { border-color: var(--fg-2); background: var(--bg-3); }
+
+/* ─── STATS BAR ────────────────────────────────────────────────────────────── */
+.stats {
+  border-bottom: 1px solid var(--border);
+  padding-block: 32px;
+}
+.stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-item {
+  padding: 16px 24px;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-num span { color: var(--accent); }
+.stat-label {
+  font-size: 12px;
+  color: var(--fg-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── SECTION COMMONS ──────────────────────────────────────────────────────── */
+section { padding-block: 64px; border-bottom: 1px solid var(--border); }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.1em;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  text-wrap: balance;
+}
+.section-title em { font-style: italic; color: var(--accent); }
+
+/* ─── EXPERTISE GRID ───────────────────────────────────────────────────────── */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.expertise-card {
+  background: var(--bg-2);
+  padding: 28px 24px;
+  transition: background 0.15s;
+}
+.expertise-card:hover { background: var(--bg-3); }
+.expertise-icon {
+  font-size: 22px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+.expertise-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--fg);
+}
+.expertise-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.expertise-card li {
+  font-size: 12px;
+  color: var(--fg-2);
+  padding-left: 12px;
+  position: relative;
+}
+.expertise-card li::before {
+  content: "─";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 10px;
+  top: 1px;
+}
+
+/* ─── PROJECTS ─────────────────────────────────────────────────────────────── */
+.project-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.cat-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 6px 12px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cat-btn:hover, .cat-btn.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.project-item {
+  display: none;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 20px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: default;
+}
+.project-item.visible { display: flex; }
+.project-item:hover { border-color: var(--fg-3); background: var(--bg-3); }
+.project-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.project-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  line-height: 1.4;
+  min-width: 0;
+}
+.project-cat-tag {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-3);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding-left: 12px;
+  flex-shrink: 0;
+}
+
+/* ─── TOOLBOX ──────────────────────────────────────────────────────────────── */
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.tool-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.tool-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.tool-chip span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+/* ─── CONTACT ──────────────────────────────────────────────────────────────── */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.contact-tagline {
+  font-family: var(--font-display);
+  font-size: 18px !important;
+  font-style: italic;
+  color: var(--accent) !important;
+  margin-bottom: 16px !important;
+  letter-spacing: 0.01em;
+  opacity: 0.92;
+}
+.contact-left p {
+  font-size: 15px;
+  color: var(--fg-2);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.contact-item-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.contact-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact-item-label {
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.contact-item-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  word-break: break-all;
+  user-select: all;
+}
+.contact-right {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 24px;
+}
+.contact-right h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-3);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-group select { cursor: pointer; }
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  width: 100%;
+}
+.submit-btn:hover { background: var(--accent-2); }
+
+/* ─── FORM SUCCESS ─────────────────────────────────────────────────────────── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 32px 16px;
+}
+.form-success.visible { display: block; }
+.form-success .checkmark { font-size: 40px; margin-bottom: 12px; }
+.form-success h4 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px; }
+.form-success p { font-size: 13px; color: var(--fg-2); }
+
+/* ─── FOOTER ───────────────────────────────────────────────────────────────── */
+footer {
+  padding-block: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-left {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.footer-left strong { color: var(--accent); }
+.footer-right {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+
+/* ─── MOBILE ───────────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 16px max(16px, env(safe-area-inset-left, 0px));
+    gap: 4px;
+  }
+  .nav-links.open li a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .menu-btn { display: block; }
+  .hero { padding-block: 48px 40px; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-right: 1px solid var(--border); }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .project-cat-tag { display: none; }
+}
+@media (max-width: 480px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+<!-- ─── NAVIGATION ─────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Burhanuddin Amravatiwala — MATLAB Consultant">
+      <!-- Professional engineering logo: oscilloscope waveform in amber shield -->
+      <svg width="42" height="38" viewBox="0 0 42 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Shield outline -->
+        <path d="M21 2 L38 9 L38 22 Q38 32 21 37 Q4 32 4 22 L4 9 Z" fill="var(--accent)" opacity="0.10" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/>
+        <!-- Oscilloscope waveform: flat → step-up → square pulse → step-down → flat -->
+        <polyline points="8,22 12,22 14,14 18,14 18,22 24,22 24,14 28,14 28,22 34,22"
+          fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">MatlinkExpert <span class="nav-logo-sub">// MATLAB &amp; Simulink</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#toolbox">Toolbox</a></li>
+      <li><a href="#contact" class="nav-cta">Connect With Us</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <rect y="3" width="20" height="2" rx="1"/>
+        <rect y="9" width="20" height="2" rx="1"/>
+        <rect y="15" width="20" height="2" rx="1"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">MATLAB &amp; Simulink Consultant</p>
+    <h1>Engineering simulations that <em>work</em> — from first principles to validated models</h1>
+    <p class="hero-desc">
+      Hands-on expert in Model-Based Design, electric vehicle systems, power electronics, and advanced control. I build complete Simulink models, debug existing code, and deliver results that match theory and real-world expectations.
+    </p>
+    <div class="hero-tags">
+      <span class="tag highlight">EV &amp; BMS</span>
+      <span class="tag highlight">Power Electronics</span>
+      <span class="tag highlight">Control Systems</span>
+      <span class="tag">Simscape</span>
+      <span class="tag">Reinforcement Learning</span>
+      <span class="tag">Renewable Energy</span>
+      <span class="tag">Motor Drives</span>
+      <span class="tag">Smart Grid</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm1.294.456-.299 11.09 6.58-3.494zm.185 11.09 6.58-3.494 6.58 3.494zm13.185 0-.299-11.09-6.28 7.596z"/></svg>
+        Get a Quote
+      </a>
+      <a href="#projects" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 .278a.77.77 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278"/></svg>
+        View Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ──────────────────────────────────────────────────────────────── -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">150<span>+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8<span>+</span></div>
+        <div class="stat-label">Domain Areas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">R2024<span>a</span></div>
+        <div class="stat-label">MATLAB Version</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24<span>hr</span></div>
+        <div class="stat-label">Typical Turnaround</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── EXPERTISE ─────────────────────────────────────────────────────────── -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Technical <em>Expertise</em></h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">⚡</div>
+        <h3>EV &amp; Energy Storage</h3>
+        <ul>
+          <li>RL-based energy management</li>
+          <li>Battery–supercapacitor hybrid systems</li>
+          <li>SoH estimation &amp; cell balancing</li>
+          <li>Bidirectional on-board chargers</li>
+          <li>Thermal management &amp; modeling</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🔌</div>
+        <h3>Power Electronics</h3>
+        <ul>
+          <li>Dual Active Bridge (DAB) converters</li>
+          <li>LLC resonant converter design</li>
+          <li>Buck–boost converter modeling</li>
+          <li>T-type &amp; five-level inverters</li>
+          <li>Power MOSFET thermal modeling</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🎛</div>
+        <h3>Control Systems</h3>
+        <ul>
+          <li>PID, Fuzzy, MPC, ADRC</li>
+          <li>Sliding mode &amp; ESO-based control</li>
+          <li>Field-Oriented Control (FOC)</li>
+          <li>Direct Torque Control (DTC)</li>
+          <li>Reinforcement learning control</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🌿</div>
+        <h3>Renewable Energy</h3>
+        <ul>
+          <li>Grid-tied solar PV with MPPT</li>
+          <li>LVFRT-compliant PMSG wind systems</li>
+          <li>Microgrid cost optimization</li>
+          <li>Droop control for distributed gen.</li>
+          <li>Smart grid stability enhancement</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🔧</div>
+        <h3>Motor Drives</h3>
+        <ul>
+          <li>Six-phase induction motor DTC</li>
+          <li>Five-phase PMSM modeling</li>
+          <li>dq-axis mathematical models</li>
+          <li>Multilevel inverter motor drives</li>
+          <li>Synchronous generator dynamics</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">📡</div>
+        <h3>Power Systems</h3>
+        <ul>
+          <li>AGC for multi-area power systems</li>
+          <li>Transmission line simulation</li>
+          <li>Fault detection &amp; classification</li>
+          <li>EV cabin thermal &amp; HVAC modeling</li>
+          <li>Vehicle dynamics simulation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ───────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Project <em>Portfolio</em></h2>
+    </div>
+    <div class="project-categories">
+      <button class="cat-btn active" data-cat="all">All Projects</button>
+      <button class="cat-btn" data-cat="ev">EV &amp; Energy</button>
+      <button class="cat-btn" data-cat="motors">Motor Drives</button>
+      <button class="cat-btn" data-cat="converters">Converters</button>
+      <button class="cat-btn" data-cat="renewable">Renewable</button>
+      <button class="cat-btn" data-cat="control">Control</button>
+    </div>
+    <div class="projects-list" id="projectsList">
+      <!-- EV & Energy Storage -->
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">Reinforcement Learning–Based Energy Management for EV Battery–Supercapacitor System</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">Bidirectional DC–DC Converter for Plug-In Electric Vehicle Applications</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">EV Powertrain Modeling and Performance Analysis in Simulink</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">State of Health (SoH) Estimation for Lithium-Ion Battery Packs</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">14-Cell Battery Pack Modeling and Thermal Analysis</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">Wireless Power Transfer System for EV Charging</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <div class="project-item visible" data-cat="ev">
+        <div class="project-dot"></div>
+        <div class="project-name">Fuel Cell–Ultracapacitor Hybrid Energy System Modeling</div>
+        <div class="project-cat-tag">EV / ENERGY</div>
+      </div>
+      <!-- Motor Drives -->
+      <div class="project-item visible" data-cat="motors">
+        <div class="project-dot"></div>
+        <div class="project-name">Reinforcement Learning–Based DTC Algorithm for Six-Phase Induction Motor</div>
+        <div class="project-cat-tag">MOTOR DRIVES</div>
+      </div>
+      <div class="project-item visible" data-cat="motors">
+        <div class="project-dot"></div>
+        <div class="project-name">Five-Phase PMSM Modeling and Control</div>
+        <div class="project-cat-tag">MOTOR DRIVES</div>
+      </div>
+      <div class="project-item visible" data-cat="motors">
+        <div class="project-dot"></div>
+        <div class="project-name">PMSM vs Induction Motor Performance Comparison</div>
+        <div class="project-cat-tag">MOTOR DRIVES</div>
+      </div>
+      <div class="project-item visible" data-cat="motors">
+        <div class="project-dot"></div>
+        <div class="project-name">Field-Oriented Control (FOC) and Direct Torque Control (DTC) Implementation</div>
+        <div class="project-cat-tag">MOTOR DRIVES</div>
+      </div>
+      <div class="project-item visible" data-cat="motors">
+        <div class="project-dot"></div>
+        <div class="project-name">IPQC-Based Five-Level Multilevel Inverter for Induction Motor Drive</div>
+        <div class="project-cat-tag">MOTOR DRIVES</div>
+      </div>
+      <!-- Power Converters -->
+      <div class="project-item visible" data-cat="converters">
+        <div class="project-dot"></div>
+        <div class="project-name">Dual Active Bridge (DAB) DC–DC Converter with Disturbance Rejection</div>
+        <div class="project-cat-tag">CONVERTERS</div>
+      </div>
+      <div class="project-item visible" data-cat="converters">
+        <div class="project-dot"></div>
+        <div class="project-name">LLC Resonant Converter Design and Analysis</div>
+        <div class="project-cat-tag">CONVERTERS</div>
+      </div>
+      <div class="project-item visible" data-cat="converters">
+        <div class="project-dot"></div>
+        <div class="project-name">Buck–Boost Converter Modeling and Control</div>
+        <div class="project-cat-tag">CONVERTERS</div>
+      </div>
+      <div class="project-item visible" data-cat="converters">
+        <div class="project-dot"></div>
+        <div class="project-name">T-Type Multilevel Inverter for Grid and Drive Applications</div>
+        <div class="project-cat-tag">CONVERTERS</div>
+      </div>
+      <div class="project-item visible" data-cat="converters">
+        <div class="project-dot"></div>
+        <div class="project-name">DC–DC Converter Thermal Modeling of Power MOSFETs</div>
+        <div class="project-cat-tag">CONVERTERS</div>
+      </div>
+      <!-- Renewable -->
+      <div class="project-item visible" data-cat="renewable">
+        <div class="project-dot"></div>
+        <div class="project-name">Grid-Tied Solar PV System with Power Quality Analysis</div>
+        <div class="project-cat-tag">RENEWABLE</div>
+      </div>
+      <div class="project-item visible" data-cat="renewable">
+        <div class="project-dot"></div>
+        <div class="project-name">Low-Voltage Fault Ride-Through (LVFRT) Control for PMSG Wind Turbine</div>
+        <div class="project-cat-tag">RENEWABLE</div>
+      </div>
+      <div class="project-item visible" data-cat="renewable">
+        <div class="project-dot"></div>
+        <div class="project-name">Microgrid Cost Optimization Using Energy Management Strategies</div>
+        <div class="project-cat-tag">RENEWABLE</div>
+      </div>
+      <div class="project-item visible" data-cat="renewable">
+        <div class="project-dot"></div>
+        <div class="project-name">Smart Grid Stability Enhancement Using Advanced Control Techniques</div>
+        <div class="project-cat-tag">RENEWABLE</div>
+      </div>
+      <!-- Control -->
+      <div class="project-item visible" data-cat="control">
+        <div class="project-dot"></div>
+        <div class="project-name">Active Cell Balancing Algorithm for Battery Management Systems</div>
+        <div class="project-cat-tag">CONTROL</div>
+      </div>
+      <div class="project-item visible" data-cat="control">
+        <div class="project-dot"></div>
+        <div class="project-name">Model Predictive and ADRC-Based Control Performance Evaluation</div>
+        <div class="project-cat-tag">CONTROL</div>
+      </div>
+      <div class="project-item visible" data-cat="control">
+        <div class="project-dot"></div>
+        <div class="project-name">Automatic Gear Shifting Logic for Electric Sports Car</div>
+        <div class="project-cat-tag">CONTROL</div>
+      </div>
+      <div class="project-item visible" data-cat="control">
+        <div class="project-dot"></div>
+        <div class="project-name">Falcon 9 Launch Vehicle Simulation Model</div>
+        <div class="project-cat-tag">CONTROL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TOOLBOX ────────────────────────────────────────────────────────────── -->
+<section id="toolbox">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">MATLAB <em>Toolbox</em></h2>
+    </div>
+    <div class="toolbox-grid">
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Simulink</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Simscape Electrical</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Control System Toolbox</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Reinforcement Learning Toolbox</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Signal Processing Toolbox</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Optimization Toolbox</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Stateflow</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Power Systems Blockset</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>Simscape Multibody</span></div>
+      <div class="tool-chip"><div class="tool-chip-dot"></div><span>MATLAB R2024a</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Let's Build <em>Together</em></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <p class="contact-tagline">
+          <em>"Your simulation challenges, precisely engineered."</em>
+        </p>
+        <p>
+          Available for freelance MATLAB and Simulink projects worldwide. I collaborate with students, researchers, startups, and engineering teams — from rapid debugging to complete model development.
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">✉</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Email</span>
+              <span class="contact-item-value">matlinkexpert@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Location</span>
+              <span class="contact-item-value">San Francisco, CA · Works Globally</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">WhatsApp</span>
+              <span class="contact-item-value">+91 8140265253</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Response Time</span>
+              <span class="contact-item-value">Within 12–24 hours</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💼</div>
+            <div class="contact-item-text">
+              <span class="contact-item-label">Platforms</span>
+              <span class="contact-item-value">Upwork · Freelancer · Direct</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3>Send a Project Brief</h3>
+        <div id="contactForm">
+          <form class="contact-form" id="projectForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Dr. John Smith" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@university.edu" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="project-type">Project Type</label>
+              <select id="project-type">
+                <option value="">Select a domain...</option>
+                <option>EV &amp; Battery Systems</option>
+                <option>Power Electronics / Converter</option>
+                <option>Control Systems Design</option>
+                <option>Motor Drives</option>
+                <option>Renewable Energy / Smart Grid</option>
+                <option>Power Systems</option>
+                <option>Other / Not Listed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Description</label>
+              <textarea id="message" placeholder="Describe your simulation requirements, scope, and deadline..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L2.29 6.079l4.338 2.76z"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="checkmark">✅</div>
+          <h4>Message received!</h4>
+          <p>I'll review your project brief and get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    <strong>Burhanuddin Amravatiwala</strong> — MATLAB &amp; Simulink Consultant, India
+  </div>
+  <div class="footer-right">© 2026 · All rights reserved</div>
+</footer>
+
+<script>
+// Nav mobile toggle
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Project filter
+const catBtns = document.querySelectorAll('.cat-btn');
+const projectItems = document.querySelectorAll('.project-item');
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    projectItems.forEach(item => {
+      const show = cat === 'all' || item.dataset.cat === cat;
+      item.classList.toggle('visible', show);
+    });
+  });
+});
+
+// Contact form
+document.getElementById('projectForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('visible');
+});
+</script>
+
+</body></html>
